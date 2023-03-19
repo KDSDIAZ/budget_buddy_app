@@ -4,8 +4,28 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Income',  45000],
+          ['Expenses', 15000],
+          ['Savings', 30000],
+          
+        ]);
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        var options = {
+          title: 'Monthly Budget',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+        </script>
+        <title>{{ config('app.name', 'Budget Buddy') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
