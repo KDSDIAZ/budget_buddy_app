@@ -22,6 +22,23 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/faqs', function () {
+    return view('faqs');
+});
+
+Route::get('/footer', function () {
+    return view('footer');
+});
+
+Route::get('/testimonials', function () {
+    return view('testimonials');
+});
+
+
 Route::get('/dashboard',[DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::post('incomes', [IncomeController::class, 'store'])->name('incomes.store');
