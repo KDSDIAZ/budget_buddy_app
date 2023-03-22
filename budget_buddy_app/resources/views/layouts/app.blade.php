@@ -4,21 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Income',  45000],
-          ['Expenses', 15000],
-          ['Savings', 30000],
+          ['Income',  1000],
+          ['Expenses', 200],
+          ['Savings', 800],
           
         ]);
 
         var options = {
-          title: 'Monthly Budget',
-          pieHole: 0.4,
+          pieHole: 0.6,
+         'width':500,
+         'height':400,
+          backgroundColor: { fill:'transparent' },
+          legend:{textStyle:{color: '#FFF'}}
+          
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));

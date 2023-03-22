@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Savings;
 use App\Models\Incomes;
@@ -11,14 +11,17 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $user = User::find(1);
-        $incomes = Incomes::where('user_id', 1)->get();
-        $expenses = Expenses::where('user_id', 1)->get();
-        $savings = Savings::where('user_id', 1)->get();
+        $showincome = DB::select('CALL showIncomeThisMonth()');
+        $showexpense = DB::select('CALL showExpenseThisMonth()');
+        $showsavings = DB::select('CALL showSavingsThisMonth()');
+        $user_id = auth()->user()->id;
+        $incomes = Incomes::where('user_id', $user_id)->latest('updated_at')->get();
+        $expenses = Expenses::where('user_id', $user_id)->latest('updated_at')->get();
+        $savings = Savings::where('user_id', $user_id)->latest('updated_at')->get();
         $totalIncome = $incomes->sum('amount');
         $totalExpense = $expenses->sum('amount');
         $netIncome = $totalIncome - $totalExpense;
 
-        return view('dashboard', compact('incomes', 'expenses', 'savings', 'totalIncome', 'totalExpense','netIncome' ));
+        return view('dashboard', compact('incomes', 'expenses', 'savings', 'totalIncome', 'totalExpense','netIncome','showincome','showexpense','showsavings' ));
     }
 }

@@ -6,13 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Savings;
 class SavingsController extends Controller
 {
-    public function showIncomeById(){
-        $savings = DB::table('savings')
-        ->select('CALL showUserSavings()')
-        ->where(1)
-        ->get();
-        return view('dashboard', ['savings' => $savings]);
-    }
+
     public function store(Request $request)
     {
 
@@ -20,12 +14,23 @@ class SavingsController extends Controller
     'name' => 'required',
     'amount' => 'required',
     ]);
-    $income = new Savings;
-    $income->name = $request->name;
-    $income->amount = $request->amount;
-    $income->description = $request->description;
-    $income->save();
+    $user_id = auth()->user()->id;
+    $savings = new Savings;
+    $savings->name = $request->name;
+    $savings->amount = $request->amount;
+    $savings->description = $request->description;
+    $savings->user_id = $user_id;
+    $savings->save();
     return redirect('/dashboard')
     ->with('success','Successfully added.');
+}
+
+public function destroy($id)
+    {
+    $savings = Savings::findOrFail($id);
+    $savings->delete();
+
+    return redirect('/dashboard')
+    ->with('success','Successfully deleted.');
 }
 }

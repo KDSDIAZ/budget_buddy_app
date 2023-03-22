@@ -24,6 +24,14 @@ Route::get('/', function () {
 
 Route::get('/dashboard',[DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::post('incomes', [IncomeController::class, 'store'])->name('incomes.store');
+Route::post('expenses', [ExpenseController::class, 'store'])->name('expenses.store');
+Route::post('savings', [SavingsController::class, 'store'])->name('savings.store');
+
+Route::delete('/incomes/{id}', [IncomeController::class, 'destroy'])->name('incomes.destroy');
+Route::delete('/expenses/{id}', [ExpenseController::class, 'destroy'])->name('expenses.destroy');
+Route::delete('/savings/{id}', [SavingsController::class, 'destroy'])->name('savings.destroy');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
