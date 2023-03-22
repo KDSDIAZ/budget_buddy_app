@@ -8,14 +8,18 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <section class="relative isolate overflow-hidden bg-white py-24 px-6 sm:py-32 lg:p-24">
-        <p class="bg-violet-800 text-gray-300 pb-3 pt-3 text-5xl font-bold text-center">Money Stories</p>
-        <p class="bg-violet-800 text-gray-300 text-center font-semibold px-56 pt-2 pb-3 mb-10">Talking about money is taboo? Not here. Read real stories from real people. You’ll laugh, you’ll cry, and most of all—you’ll feel understood.</p>
-    <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.600),white)] opacity-20"></div> 
-    <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center "></div>
-    <div class="grid grid-cols-4 gap-4">
-    <div class="mx-auto max-w-2xl lg:max-w-4xl col-span-2  rounded-xl shadow-lg hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-3 active:translate-y-0">
-        <figure>
+<section class="bg-[#21083b] min-w-full">
+    <div>  
+        <p class="text-gray-300 pb-2 pt-20 text-5xl font-bold text-center">Money Stories</p>
+        <p class="text-gray-300 text-center font-semibold px-56 pt-2 pb-10 mb-10">Talking about money is taboo? Not here. Read real stories from real people. You’ll laugh, you’ll cry, and most of all—you’ll feel understood.</p>
+    </div>
+    <div class="relative isolate overflow-hidden bg-white py-24 px-6 sm:py-32 lg:p-24">    
+        <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.600),white)] opacity-20">            
+        </div> 
+        <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center "></div>
+        <div class="grid grid-cols-4 gap-4">
+        <div class="mx-auto max-w-2xl lg:max-w-4xl col-span-2  rounded-xl shadow-lg hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-3 active:translate-y-0">
+    <figure>
         <figcaption>
             <img class="mx-auto h-20 w-20 rounded-full" src="https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&w=400" alt="">
             <div class="mt-4 flex items-center justify-center space-x-3 text-base">
@@ -98,6 +102,7 @@
         </blockquote>
         </figure>
         </div>
+    </div>
     </div>
     </section>
 </body>

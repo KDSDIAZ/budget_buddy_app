@@ -8,11 +8,11 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div class="h-screen w-full bg-zinc-50">
-        <div class="pl-48">
-            <p class="pt-20 text-2xl font-semibold">ABOUT US</p>
+    <div class="h-screen w-full">
+        <div class="text-center bg-[#21083b] ">
+            <p class="p-10 text-2xl font-semibold text-white">ABOUT US</p>
         </div>  
-        <div class="mx-auto grid max-w-4xl grid-cols-12 gap-4 p-5 px-6 "> 
+        <div class="mx-auto grid max-w-4xl grid-cols-12 gap-4 p-5 px-6"> 
             <div class="col-span-3 pt-5 text-justify sm:col-span-8"> 
                 <p>Welcome to Budget-Buddy, the budget tracking app designed to help you manage your finances and achieve your financial goals.</p><br/>
                 <p>At Budget-Buddy, we believe that financial management should be simple, straightforward, and accessible to everyone. That's why we've created an app that makes it easy to track your income and expenses, set budgets, and plan for the future.</p><br/>

@@ -8,10 +8,10 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div class=" bg-gray-900">
+    <div class=" bg-[#21083b]">
         <div class="max-w-2xl mx-auto text-white py-10">
             <div class="text-center">
-                <h3 class="text-3xl mb-3 font-bold"> Download <span class="text-purple-500">BUDGET-BUDDY</span> app </h3>
+                <h3 class="text-3xl mb-3 font-bold"> Download <span class="text-white font-extrabold">BUDGET </span> <span class="text-[#a351b2] font-extrabold">BUDDY</span> app </h3>
                 <p>and Stay on track of your finances. </p>
                 <div class="flex justify-center my-10">
                     <div class="flex items-center border w-auto rounded-lg px-4 py-2 w-52 mx-2">
