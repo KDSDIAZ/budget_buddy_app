@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ChartController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\SavingsController;
@@ -23,6 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard',[DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard',[ChartController::class, 'donutChart']);
 
 Route::post('incomes', [IncomeController::class, 'store'])->name('incomes.store');
 Route::post('expenses', [ExpenseController::class, 'store'])->name('expenses.store');

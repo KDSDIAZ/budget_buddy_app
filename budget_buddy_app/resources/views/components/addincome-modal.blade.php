@@ -3,7 +3,6 @@
         <div class="relative bg-white w-1/3 rounded shadow-lg">
         <div class="flex justify-between items-center px-4 py-2 bg-gray-200 rounded-t">
             <h3 class="text-lg font-medium">Add Income</h3>
-            <button class="text-gray-500 hover:text-gray-600" onclick="closeModal()">Close</button>
         </div>
         <div class="px-4 py-6">
              <form method="POST" action="{{ route('incomes.store') }}">

@@ -196,4 +196,30 @@ function closeModal(modalId, closeButtonId) {
 
     
 </script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Income',  <?php echo $totalIncome; ?>],
+          ['Expenses', <?php echo $totalExpense; ?>],
+          
+          
+        ]);
+
+        var options = {
+          pieHole: 0.5,
+         'width':500,
+         'height':400,
+          backgroundColor: { fill:'transparent' },
+          legend:{textStyle:{color: '#FFF'}}
+          
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+      </script>
 </x-app-layout>
